@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        body{
+            background-image: url('https://static.vecteezy.com/system/resources/previews/004/941/847/original/cosmetic-background-for-product-branding-and-packaging-presentation-geometry-form-circle-molding-on-podium-stage-with-shadow-of-leaf-background-design-eps10-vector.jpg');
+            
+        }
+        .container{
+            background-image: url('https://img.freepik.com/free-vector/organic-white-backgroun_1199-324.jpg');
+            border: 2px solid black;
+            border-radius: 4px;
+            display: block;
+            width: 700px;
+            margin: 40px auto;
+            text-align: center;
+            justify-content: center;
+        }
+        div,input[type="sumbit"]{
+            margin: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h2>Registration Form</h2>
+        <hr>
+        <form action="backend.Nodejs" onsubmit="onsignup(event)">
+            
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="myName" id="name" required>
+            </div>
+            <br>
+            <div>
+                <label for="role">Address:</label>
+                <input type="text" name="myRole" id="add" required>
+            </div>
+            <br>
+            
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="myEmail" id="email" required>
+            </div>
+        <br>
+        <div>
+            <label for="dt">Date:</label>
+            <input type="date" name="myDate" id="dt" required>
+            
+        </div>
+        <br>
+        <div>
+            <label for="bonus">Bonus:</label>
+            <input type="number" name="myBonus" id="bonus" required>
+        </div>
+        <br>
+        
+        <label for="about">Write about yourself:</label>
+        <div>
+            <textarea name="" cols="30" rows="10" id="about"></textarea>
+            
+        </div>
+        <br>
+        
+        <div>
+            <input type="submit" value="Submit Now">
+        </div>
+    </form>
+    
+</div>
+<script src="index.js"></script>
+</body>
+
+</html>
