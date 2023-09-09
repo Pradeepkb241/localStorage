@@ -8,19 +8,30 @@ function onsignup(event){
    console.log(event.target.bonus.value);
    console.log(event.target.about.value);
 
-   let name = document.getElementById('name').value;
-   localStorage.setItem('Name:',name);
-   let add = document.getElementById('add').value;
-   localStorage.setItem('Address:',add);
-   let email= document.getElementById('email').value;
-   localStorage.setItem('Email:',email);
-   let date= document.getElementById('dt').value;
-   localStorage.setItem('Date:',dt);
-   let bonus = document.getElementById('bonus').value;
-   localStorage.setItem('Bonus:',bonus);
-   let about= document.getElementById('about').value;
-   localStorage.setItem('About Yourself:',about);
+
+
+   let myObj = {
+
+   Name : document.getElementById('name').value,
    
+   Address : document.getElementById('add').value,
    
+   Email: document.getElementById('email').value,
+   
+   Date: document.getElementById('dt').value,
+   
+   Bonus : document.getElementById('bonus').value,
+   
+   About: document.getElementById('about').value,
+
+   }
+    
+   let myObj_convertToString =  JSON.stringify(myObj);
+   localStorage.setItem('myObj' ,myObj_convertToString);
+
+   
+   let myObj_converToObject = JSON.parse(localStorage.getItem('myObj'));
+
+   console.log(myObj_converToObject);
 }
 
