@@ -1,37 +1,45 @@
-function onsignup(event){
+
+
+function onsignup(event) {
     event.preventDefault();
 
-   console.log(event.target.name.value);
-   console.log(event.target.add.value);
-   console.log(event.target.email.value);
-   console.log(event.target.dt.value);
-   console.log(event.target.bonus.value);
-   console.log(event.target.about.value);
-
-
-
-   let myObj = {
-
-   Name : document.getElementById('name').value,
-   
-   Address : document.getElementById('add').value,
-   
-   Email: document.getElementById('email').value,
-   
-   Date: document.getElementById('dt').value,
-   
-   Bonus : document.getElementById('bonus').value,
-   
-   About: document.getElementById('about').value,
-
-   }
+    const name = event.target.name.value;
+    const address = event.target.add.value;
+    const email = event.target.email.value;
+    const date = event.target.dt.value;
+    const bonus = event.target.bonus.value;
+    const about = event.target.about.value;
+  
+    const myObj = {
+      Name: name,
+      Address: address,
+      Email: email,
+      Date: date,
+      Bonus: bonus,
+      About: about,
+    };
+  
+    // Retrieve existing objects from localStorage or initialize an empty array
+    const localStorageContent = localStorage.getItem('details');
     
-   let myObj_convertToString =  JSON.stringify(myObj);
-   localStorage.setItem('myObj' ,myObj_convertToString);
-
-   
-   let myObj_converToObject = JSON.parse(localStorage.getItem('myObj'));
-
-   console.log(myObj_converToObject);
-}
-
+    let details;
+    if(localStorageContent === null){
+        details = [];
+    }else{
+        details = JSON.parse(localStorageContent);
+    }
+  
+    // Add the new object to the array
+    details.push(myObj);
+  
+    // Store the updated array in localStorage
+    localStorage.setItem('details', JSON.stringify(details));
+  
+    // Optionally, clear the form fields or perform other actions
+    event.target.reset();
+  
+    // To retrieve all stored objects
+    const storedObjects = JSON.parse(localStorage.getItem('details'));
+    console.log(storedObjects);
+  }
+  
